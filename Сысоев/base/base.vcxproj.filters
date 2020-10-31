@@ -21,12 +21,27 @@
     <ClCompile Include="postfix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="postfix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TRecord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
