@@ -21,6 +21,44 @@ class TPostfix
     TTable<int> reitings;
     TTable <float>* varieble;
     TStack<TRecord<int>> prior; 
+    void StringToWord(string str, string* w, int& k)
+    {
+        string zn = "+-*/ ^()";
+        k = 0;
+        w[0] = "";
+        for (int i = 0; i < str.length(); i++)
+        {
+            int l = zn.find(str[i]);
+
+            if (l < 0)
+            {
+                w[k] += str[i];
+                if (i == str.length() - 1)
+                {
+                    k++;
+                }
+            }
+            else
+            {
+                if (str[i] == ' ')
+                {
+                    if (w[k] != "")
+                    {
+                        w[++k] = "";
+                    }
+                }
+                else
+                {
+                    if (w[k] != "")
+                    {
+                        k++;
+                    }
+                    w[k] = str[i];
+                    w[++k] = "";
+                }
+            }
+        }
+    }
     void workLeft()
     {
         prior.push(TRecord<int>("(", 0));
@@ -63,6 +101,7 @@ public:
         }
         return str;
     }
+
     void madereiting()
     {
         reitings = TTable<int>(10);
@@ -147,7 +186,24 @@ public:
     {
         return varieble;
     }
-  //string ToPostfix();
+    string GetPostfix()
+    {
+        string res="";
+        for (int i = 0; i < postfixsize; i++)
+        {
+            res = res + postfix[i] + " ";
+        }
+        return res;
+    };
+    string GetInfix()
+    {
+        string res = "";
+        for (int i = 0; i < infixsize; i++)
+        {
+            res =res+infix[i]+" ";
+        }
+        return res;
+    };
   double Calculate()
   {
       float Left;

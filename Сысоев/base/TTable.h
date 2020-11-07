@@ -90,7 +90,7 @@ public:
 		if (l == -1)
 		{
 			arr[current++] = newrecord;
-			cout << current << endl;
+			                                        //cout << current << endl;
 		}
 		else
 		{
