@@ -91,7 +91,6 @@ class TPostfix
         }
         prior.push(tmp);
     }
-public:
     string ToString()
     {
         string str = "";
@@ -101,7 +100,8 @@ public:
         }
         return str;
     }
-
+public:
+   
     void madereiting()
     {
         reitings = TTable<int>(10);
@@ -114,7 +114,7 @@ public:
         reitings.SetStr("sin", 3);
         reitings.SetStr("cos", 3);
     }
-    string ToPostfix(string str)
+    void ToPostfix(string str)
     {
         postfixcount = 0;
         infixsize = str.length() + 2;
@@ -149,7 +149,6 @@ public:
             }
         }
         workEnd();
-        return ToString();
     }
     
     TPostfix(string str)
